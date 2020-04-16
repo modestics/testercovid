@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ 
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Africamex - Questionnaire d'autotest du coronavirus">
+    <meta name="author" content="Africamex">
+    <meta name="keywords" content="coronavirus, corona, covid-19, autotest, corona virus, covid, covid19">
+    <title>Coronavirus | Questionnaire de Santé - AFRICAMEX</title>
+
+{% load static %}
+    <!-- Favicons-->
+<link rel="shortcut icon" href="{% static "monapp/static/img/Africamex-favi.png" %}"  type="image/x-icon">
+    
+
+    <!-- GOOGLE WEB FONT -->
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static "monapp/static/css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "monapp/static/css/menu.css"%}" rel="stylesheet">
+    <link href="{% static "monapp/static/css/style.css" %}" rel="stylesheet">
+	<link href="{% static "monapp/static/css/vendors.css" %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static "monapp/static/css/custom.css"%}" rel="stylesheet">
+	
+	<!-- MODERNIZR MENU -->
+
+
+
+
+</head>
+
+<body>
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+	<header>
+		<div class="container">
+		    <div class="row">
+                <div class="col-3">
+                     <a href="index.html"><img src="{% static "monapp/static/img/LOGO-Africamex.png"%}" alt="" width="178" height="45" class="d-none d-md-block"><img src="{% static "monapp/static/img/LOGO-Africamex.png"%}" alt="" width="62" height="45" class="d-block d-md-none"></a>
+                </div>
+                <div class="col-9">
+                    <div id="social">
+                        <ul>
+                            <li><a href="#0"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#0"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#0"><i class="icon-google"></i></a></li>
+                            <li><a href="#0"><i class="icon-linkedin"></i></a></li>
+
+                        </ul>
+                    </div>
+                    <!-- /social -->
+					<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+					<!-- /menu button -->
+                    <nav>
+						<ul class="cd-primary-nav">
+							<li><a href="index.html" class="animated_link">Questionnaire</a></li>
+							<li><a href="prevention.html" class="animated_link">Astuces de Prévention</a></li>
+							<li><a href="faq.html" class="animated_link">Faq</a></li>
+						</ul>
+					</nav>
+					<!-- /menu -->
+                </div>
+            </div>
+		</div>
+		<!-- /container -->
+	</header>
+	<!-- /Header -->
+
+	<div class="container">
+
+    <div id="form_container">
+        <div class="row no-gutters">
+            <div class="col-lg-4">
+                <div id="left_form">
+                    <figure>
+                        <img src="{% static "monapp/static/img/info_graphic_1.svg"%}" alt="" width="100" height="100">
+                    </figure>
+                    <h2>CORONAVIRUS <span>Questionnaire de Santé</span></h2>
+                    <p>Vous pensez avoir été exposé au Coronavirus COVID-19 et avez des symptômes ? <br>Faites le test pour répondre en citoyen éclairé selon vos symptômes</p>
+                    <p><h5>Numeros d'Urgences :</h5> <h2><strong>101 - 144 </strong><h2></p>
+                    <a href="prevention.html" class="btn_1 rounded yellow purchase" target="_parent">Voir les Mesures de Préventions</a>
+                    <a href="prevention.html" class="btn_1 rounded mobile_btn yellow">Voir les Mesures de Préventions</a>
+                    <a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div id="wizard_container">
+                    <div id="top-wizard">
+                        <div id="progressbar"></div>
+                        <span id="location"></span>
+                    </div>
+                    <!-- /top-wizard -->
+                    <form id="systemForm" method="post" action="">
+                        <input id="website" name="website" type="text" value=""/>
+                        <!-- Leave for security protection, read docs for details -->
+                        <div id="middle-wizard">
+
+
+
+                            <div class="step">
+                                 {% csrf_token %}
+                                <h3 class="main_question"><i class="arrow_right"></i>
+                                        {{resultats}}  </h3>
+                                <div class="row">
+
+
+                                    <div class="col-lg-6">
+                                       
+
+                                        
+
+
+                                      
+
+                                       
+
+
+                               
+                                        
+                                    </div>
+                              
+                             
+                            
+
+                              
+                                </div>
+
+
+                                <!-- /row -->
+                            </div>
+                            
+
+                            
+
+                        </div>
+
+                   
+                        <!-- /bottom-wizard -->
+
+
+                    </form>
+
+                
+            
+                </div>
+                <!-- /Wizard container -->
+            </div>
+        </div><!-- /Row -->
+    </div><!-- /Form_container -->
+
+
+<!-- /container -->
+
+<div class="container">
+    <footer id="home" class="clearfix">
+        <p>© 2020 Africamex</p>
+        <ul>
+            <li><a href="prevention.html" class="animated_link">Astuces de Prévention</a></li>
+            <li><a href="faq.html" class="animated_link">Faq</a></li>
+            
+        </ul>
+    </footer>
+    <!-- end footer-->
+</div>
+<!-- /container -->
+
+<div class="cd-overlay-nav">
+    <span></span>
+</div>
+<!-- /cd-overlay-nav -->
+<div class="cd-overlay-content">
+    <span></span>
+</div>
+<!-- /cd-overlay-content -->
+
+	<!-- Modal terms -->
+	
+	<!-- /.modal -->
+
+	<!-- Modal info -->
+	
+	<!-- /.modal -->
+     
+	<!-- COMMON SCRIPTS -->
+	<script src="{% static "monapp/static/js/jquery-3.2.1.min.js"%}"></script>
+    <script src="{% static "monapp/static/js/common_scripts.min.js"%}"></script>
+	<script src="{% static "monapp/static/js/velocity.min.js"%}"></script>
+	<script src="{% static "monapp/static/js/common_functions.js"%} "></script>
+
+	<!-- Wizard script-->
+	
+
+</body>
+</html> 
