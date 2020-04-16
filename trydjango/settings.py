@@ -25,7 +25,7 @@ SECRET_KEY = 'oxcd8*!0r*qw5yppb_26v#8ag92g^+gm_)he)r64@85h&yey&d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testercovid.herokuapp.com']
+ALLOWED_HOSTS = ['testercovid.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
    
      'monapp',
+
 
 ]
 
