@@ -238,8 +238,8 @@ class DonneesDuProblem():
         En cas d’urgence, appeler les Numeros d'Urgences :
 101 - 144."""
         elif Post.facteur_de_gravite_majeur >=1:
-            resultats = """Vous devriez  les Numeros d'Urgences :
-101 - 144"""
+            resultats = """Vous devriez appeler  les Numeros d'Urgences :
+101 - 144 pour une prise en charge"""
         elif (Post.fievre==True and Post.toux== True):
             if(Post.facteur_pronostique_defavorable==0):
                 resultats ="""      Votre situation peut relever d’un COVID 19.
