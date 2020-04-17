@@ -238,7 +238,7 @@ class DonneesDuProblem():
         En cas d’urgence, appeler les Numeros d'Urgences :
 101 - 144."""
         elif Post.facteur_de_gravite_majeur >=1:
-            resultats = """les Numeros d'Urgences :
+            resultats = """Appelez les Numeros d'Urgences :
 101 - 144"""
         elif (Post.fievre==True and Post.toux== True):
             if(Post.facteur_pronostique_defavorable==0):
