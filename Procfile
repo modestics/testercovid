@@ -1,1 +1,1 @@
-web: gunicorn testercovid.wsgi
+web: gunicorn trydjango.wsgi
