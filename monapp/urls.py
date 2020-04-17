@@ -11,7 +11,7 @@ urlpatterns = [
  #    #path('fievree/',views.DonneesDuProblem.recevoir_valeurs_fiever_1	,name='reponse2'),
  #    path('form/',views.register,name='add'),
  #    path('form/reponse',views.get_name,name='home'),
-      path('index/',views.DonneesDuProblem.index,name='index'),
+      path('',views.DonneesDuProblem.index,name='index'),
    
  #    path('choisir/',views.choice_field,name='choix'),
  #    path('recevoir_valeurs_code_postal/',views.DonneesDuProblem.recevoir_valeurs_code_postal,name='ad1'),
