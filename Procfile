@@ -1,1 +1,1 @@
-web: gunicorn monapp.wsgi
+web: gunicorn testercovid.wsgi
