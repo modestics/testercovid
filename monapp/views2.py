@@ -410,6 +410,7 @@ class DonneesDuProblem():
 
 
     def resultat2(request):
+    	
 
         fievre =True
         toux = Donnees['recevoir_valeurs_toux']
@@ -539,6 +540,10 @@ class DonneesDuProblem():
                 Donnees['Ville']=Reponse
           
                 return render(request,'resultat.html' ,{'form': form})
+
+        else:
+        	return render(request,'index.html' ,{'form': form})
+
             
 
 
