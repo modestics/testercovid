@@ -89,7 +89,7 @@
                         <img src="{% static "monapp/static/img/info_graphic_1.svg"%}" alt="" width="100" height="100">
                     </figure>
                     <h2>CORONAVIRUS <span>Questionnaire de Santé</span></h2>
-                    <p>Vous pensez avoir été exposé au Coronavirus COVID-19 et avez des symptômes ? <br>Faites le test pour répondre en citoyen éclairé selon vos symptômes</p>
+                    <p>Vous pensez avoir été exposé au Coronavirus COVID-19 et avez des symptômes ? <br>Faites le test pour un sésultat selon vos symptômes</p>
                     <p><h5>Numeros d'Urgences COTE D'IVOIRE :</h5> <h2><strong>101 - 144 </strong><h2></p>
                     <a href="prevention.html" class="btn_1 rounded yellow purchase" target="_parent">Voir les Mesures de Préventions</a>
                     <a href="prevention.html" class="btn_1 rounded mobile_btn yellow">Voir les Mesures de Préventions</a>
@@ -124,6 +124,22 @@
                             </div>
 
                             <div class="step" >
+
+                                <label class="custom add_top_10"></label>
+                                <h3 class="main_question"><i class="arrow_right"></i>Dans quel pays résidez-vous actuellement?</h3>
+                                <div class="row">
+
+                                    
+                                    <div class="col-lg-6">
+                                       {{form_choix_du_pays}}
+                                        
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+
+                             <div class="step" >
                              
 
 
@@ -182,7 +198,7 @@
                             <!-- /difficulty in breathing > Yes ============================== -->
 
                                 <div class="step" >
-                                    <h3 class="main_question"><i class="arrow_right"></i> aaaaAvez-vous noté une forte diminution de votre goût ou de votre odorat ces derniers jours ?</h3>
+                                    <h3 class="main_question"><i class="arrow_right"></i> Avez-vous noté une forte diminution de votre goût ou de votre odorat ces derniers jours ?</h3>
                                     <div class="form-group">
                                         <label class="container_radio version_2"> Oui
                                             <input type="radio" name="question_3" value="Yes" class="required">
@@ -308,13 +324,19 @@
 
                             <div class="step">
                                 <h3 class="main_question"><i class="arrow_right"></i>Quel est votre poids ? Quelle est votre taille ?</h3>
-                                <div class="form-group">
-                                    <div class="col-lg-6">
-                                    <label class="">
+                                <div class="">
+                                    <div class="form-group">
+                                         <label class="">
+                               
                                     
-                                     <span {{form_poids}} {{form_taille}} ></span>
-                                    </label>
-
+                                    {{form_poids}} 
+                              
+                                        </label>
+                                         <label class="">
+                                    
+                                     {{form_taille}} 
+                               
+                                         </label>
                                     </div>
                                     
                                     
@@ -478,50 +500,14 @@ ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).
                             <!-- /step-->
 
 
-                            <div class="step">
-                                <h3 class="main_question"><i class="arrow_right"></i>Entrez vos informations</h3>
-                                <div class="form-group add_top_30">
-                                    <label for="name">Nom et Prénoms</label>
-                                    <input type="text" name="name" id="name" class="form-control required" onchange="getVals(this, 'name_field');">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Adresse Email</label>
-                                    <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
-                                </div>
-                                
-                                <div class="row">
-                                    
-                                    <div class="col-lg-5 col-md-5 col-sm-6 col-8">
-                                        <div class="form-group radio_input">
-                                            <label class="container_radio mr-3">Homme
-                                                <input type="radio" name="gender" value="Male" class="required">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container_radio">Femme
-                                                <input type="radio" name="gender" value="Female" class="required">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /row-->
-                            </div>
-                            <!-- /step-->
 
                             <div class="submit step" id="end">
                                 <div class="summary">
                                     <div class="wrapper">
                                         <h3>Merci pour votre temps<br><span id="name_field"></span>!</h3>
-                                        <p>Nous vous contacterons pour plus d'information relatives au Coronavirus <strong id="email_field"></strong> Merci.</p>
+                                        
                                     </div>
-                                    <div class="text-center">
-                                        <div class="form-group terms">
-                                            <label class="container_check">SVP acceptez nos <a href="#" data-toggle="modal" data-target="#terms-txt">Termes et conditions</a> Avant de soumettre
-                                                <input type="checkbox" name="terms" value="Yes" class="required">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <!-- /step last-->

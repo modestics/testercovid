@@ -1,0 +1,49 @@
+.box input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.box p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.box input:focus ~ label {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.box input:checked + p {
+  -webkit-line-clamp: unset;
+}
+.box input:checked ~ label {
+  display: none;
+}
+
+/* From here on presentation styles */
+body {
+  align-items: center;
+ 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.box {
+
+
+  padding: 1em;
+  width: 800px;
+}
+.box p {
+  margin: 0;
+}
+.box label {
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  border: 1px solid #009ce2;
+
+
+  font-size: 0.8em;
+}

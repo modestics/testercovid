@@ -16,9 +16,17 @@ class resultat(forms.Form):
 
 
 class recevoir_valeurs_fiever(forms.Form):
-	CHOIX=[(31,'31'),(32,'32'),
-         (33,'33'),(34,'34'),(35,'35'),(36,'36'),(37,'37'), (38,'38'),(39,'39'),(40,'40'),(41,'41'),(42,'42')]
-	temp=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
+	temp=forms.DecimalField(max_digits=2, decimal_places=1,min_value=35, max_value=40)
+
+class choix_du_pays(forms.Form):
+	CHOIX=[('Benin','Bénin'),('Burkina Faso ' ,'Burkina Faso '),
+         ('Cameroun ','Cameroun '),('Cap_Vert','Cap Vert'),('Republique_Centrafricaine','République Centrafricaine'),
+         ('Republique_du_Congo ','République du Congo'),('Republique_Democratique_du_Congo','République Démocratique du Congo'),
+          ('Cote_d_Ivoire','Cote dIvoire'),('Guinee_Bissau','Guinée-Bissau'),('Guinee_Equatoriale','Guinée Equatoriale'),
+          ('Gabon','Gabon'),('Gambie','Gambie'),('Ghana','Ghana'),('Guinee','Guinée'),
+          ('Liberia','Liberia '),('Mali','Mali'),('Mauritanie','Mauritanie'),('Niger','Niger'),
+          ('Nigeria','Nigeria'),('Senegal','Sénégal'),('Sierra_Leone','Sierra Leone'),('Tchad','Tchad'),('Togo','Togo')]
+	choix_du_pays=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
 
 
 
@@ -36,7 +44,7 @@ class recevoir_valeurs_temperature(forms.Form):
 	temp=forms.IntegerField(label='Degre Celsius' )
   
 class recevoir_valeurs_poids(forms.Form):
-	poids=forms.IntegerField(label='KG' )
+	poids=forms.IntegerField(label='KG',min_value=40, max_value=150 )
 
 class recevoir_valeurs_diarrhee(forms.Form):
 	CHOIX=[('True','Oui'),
@@ -83,7 +91,7 @@ class DonneesUser(forms.Form):
 class recevoir_valeurs_toux(forms.Form):
 	CHOIX=[('True','Oui'),
          ('False','Non')]
-	Reponse=forms.ChoiceField(choices=CHOIX, widget=forms.RadioSelect(attrs={"class":"container_radio version_2"}))
+	Reponse=forms.ChoiceField(choices=CHOIX, widget=forms.RadioSelect)
 
 class recevoir_valeurs_imc(forms.Form):
 	CHOIX=[('Trueimc','hffhfhffjfjf'),
@@ -110,11 +118,11 @@ class recevoir_valeurs_cancer(forms.Form):
 
 class recevoir_valeurs_taille(forms.Form):
 	
-	taille=forms.IntegerField(label='Centimetre' )
+	taille=forms.DecimalField(label='metre', decimal_places=2, min_value=1.4, max_value=2.2 ,widget=forms.NumberInput(attrs={"class":"form-control form-control-lg" }))
 
 class recevoir_valeurs_age(forms.Form):
 	
-	age=forms.IntegerField(label='Ans' )
+	age=forms.IntegerField(label='Ans',min_value=10, max_value=110 ,widget=forms.NumberInput(attrs={"class":"form-control form-control-lg" }))
 
 class recevoir_valeurs_fatigue_moitiee_journee(forms.Form):
 	CHOIX=[('True','Oui'),

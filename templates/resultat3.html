@@ -26,12 +26,9 @@
 	<link href="{% static "monapp/static/css/menu.css"%}" rel="stylesheet">
     <link href="{% static "monapp/static/css/style.css" %}" rel="stylesheet">
 	<link href="{% static "monapp/static/css/vendors.css" %}" rel="stylesheet">
-    <link href="{% static "monapp/static/css/troc.css" %}" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
     <link href="{% static "monapp/static/css/custom.css"%}" rel="stylesheet">
-    <script src="{% static "monapp/static/js/modernizr.js"%}"></script>
-    <script src="{% static "monapp/static/js/tronc.js"%}"></script>
 	
 	<!-- MODERNIZR MENU -->
 
@@ -96,7 +93,7 @@
                         <span id="location"></span>
                     </div>
                     <!-- /top-wizard -->
-                    <form id="systemForm" method="post" action="/Reprendre/">
+                    <form id="systemForm" method="post" action="">
                         <input id="website" name="website" type="text" value=""/>
                         <!-- Leave for security protection, read docs for details -->
                         <div id="middle-wizard">
@@ -106,27 +103,20 @@
                             <div class="step">
                                  {% csrf_token %}
                                 <h3 class="main_question"><i class="arrow_right"></i>
-                                        {{resultats}}  </h3>
+                                        votre indice de masse corporelle est de {{imc}} , votre facteur de pronostique defavorable est de {{facteur_pronostique_defavorable}}, votre facteur de gravite mineur est de {{facteur_de_gravite_mineur}}, le facteur de gravite majeur est de {{facteur_de_gravite_majeur}} </h3>
+                                <div class="row">
 
 
-                                            <div class="box">
-                                             <input type="checkbox" id="expanded">
-                                            <p>      les details de votre analyse sont :
-                                         Votre << facteur de pronostique >> est de {{facteur_pronostique_defavorable}} il est considéré défavorable si supérieur à zéro; il traduit l'état de santé du patient c'est à dire s'il est par exemple hypertendu; diabétique;a une maladie respiratoire etc...  
-                                        Votre indice de masse corporelle est de: {{imc}} , il ne devrait  pas dépasser  35 .
-                                         Votre facteur de gravité mineur est de {{facteur_de_gravite_mineur}} sur une échelle de 0 à 2 , le facteur de gravté mineur  prends en compte la presence de fièvre ou de toux.
-                                         Votre facteur de gravité majeur est de {{facteur_de_gravite_majeur}} sur une échelle de 0 à 2 il prend en compte la présence de problemes respiratoires ou de difficultés à s'alimenter </p>
-  <!-- Note: I have sadly not found a nice way to put the more button/label inline inside the paragraph, after or before the ellipsis. -->
-                                            <label for="expanded" role="button">lire la suite</label>
-                                                    </div>
+                    
 
-                                           
-
-                         
+                                  <div id="bottom-wizard">
+                            <button type="button" name="backward" class="btn btn-primary btn-lg">Voir les détail de mon analyse </button> 
+                           
+                                  </div>  
 
                                     <div id="bottom-wizard">  
 
-                                   <button type="submit" name="forward" class="btn btn-primary btn-sm">Reprendre le test</button> 
+                                   <button type="button" name="forward" class="btn btn-primary btn-lg">Reprendre le test</button> 
 
 
                                       

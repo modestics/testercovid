@@ -30,7 +30,7 @@ class Post():
         self.facteur_de_gravite_majeur=0
 
     def fonction_facteur_pronostique_defavorable(self):
-        imc=(self.poids/self.taille**2)
+        imc=(self.poids/(self.taille)**2)
         facteurs = [self.age >= 70 , imc >= 30 ,  self.hypertension , self.diabetique , self.cancer , self.insuffisance_renale ,  self.maladie_respiratoire,  self.maladie_chronique_du_foie , self.enceinte , self.maladie_diminuer_vos_défenses_immunitaires , self.traitement_immunosuppresseur ]
         for facteur in facteurs:
             if facteur ==True:
@@ -55,7 +55,7 @@ class Post():
                    self.traitement_immunosuppresseur, self.code_postal]
         for i,valeur in enumerate(donnees):
             if ( (i,valeur)== (0 ,True)):
-                if (int(donnees[1]) <= 35.5 or int(donnees[1]) >= 39):
+                if (float(donnees[1]) <= 35.5 or float(donnees[1]) >= 39):
                     self.facteur_de_gravite_mineur = self.facteur_de_gravite_mineur + 1
                     
 

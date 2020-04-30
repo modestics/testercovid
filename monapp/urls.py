@@ -41,7 +41,7 @@ urlpatterns = [
  #    path('indeex_maladie_diminuer_ummunitaire/',views.DonneesDuProblem.indeex_maladie_diminuer_ummunitaire,name='ad23'),
  #    path('index/resultat/',views.DonneesDuProblem.recevoir_index,name='ad24'),
     path('resultat2/',views.DonneesDuProblem.resultat2,name='ad24'),
-
+    path('Reprendre/',views.DonneesDuProblem.Reprendre,name='ad25'),
 
 
 
