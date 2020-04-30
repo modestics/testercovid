@@ -121,7 +121,7 @@ class DonneesDuProblem():
 
 
 
-        return redirect('http://localhost:8000/')
+        return redirect('https://testercovid.herokuapp.com/')
 
 
 
