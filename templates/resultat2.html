@@ -105,6 +105,8 @@
 
                             <div class="step">
                                  {% csrf_token %}
+
+                                 <div class="row">
                                 <h3 class="main_question"><i class="arrow_right"></i>
                                         {{resultats}}  </h3>
 
@@ -118,6 +120,7 @@
                                          Votre facteur de gravité majeur est de {{facteur_de_gravite_majeur}} sur une échelle de 0 à 2 il prend en compte la présence de problemes respiratoires ou de difficultés à s'alimenter </p>
   <!-- Note: I have sadly not found a nice way to put the more button/label inline inside the paragraph, after or before the ellipsis. -->
                                             <label for="expanded" role="button">lire la suite</label>
+                                                    </div>
                                                     </div>
 
                                            
