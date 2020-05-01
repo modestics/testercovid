@@ -236,6 +236,7 @@ class DonneesDuProblem():
 
 
             gout = Yes.Yes2True(gout)
+            toux = Yes.Yes2True(toux)
             fievre = Yes.Yes2True(fievre)
             diarrhee = Yes.Yes2True(diarrhee)
             fatigue = Yes.Yes2True( fatigue)
@@ -250,7 +251,7 @@ class DonneesDuProblem():
             maladie_chronique_du_foie =Yes.Yes2True( foie)
             enceinte =Yes.Yes2True(enceinte)
             maladie_diminuer_vos_défenses_immunitaires = Yes.Yes2True( immunitaires)
-            traitement_immunosuppresseur = Yes.         Yes2True(immuinosuppresseur)
+            traitement_immunosuppresseur = Yes.Yes2True(immuinosuppresseur)
             code_postal=229
             
             imc=poids/taille**2
@@ -280,71 +281,73 @@ class DonneesDuProblem():
 
             resultats ="""Aucune reposnse"""
             if int(Post.age)<= 15 :
-                resultats = f"""     Prenez contact avec votre médecin généraliste au moindre doute.
+                resultats = f"""   1.  Prenez contact avec votre médecin généraliste au moindre doute.
             Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans.
             En cas d’urgence, appeler le :{CHOIX_DE_PAYS} """
             elif Post.facteur_de_gravite_majeur >=1:
-                resultats = f"""Vous devriez appeler le: {CHOIX_DE_PAYS}  pour une prise en charge"""
+                resultats = f""" 2.Vous devriez appeler le: {CHOIX_DE_PAYS}  pour une prise en charge"""
             elif (Post.fievre==True and Post.toux== True):
                 if(Post.facteur_pronostique_defavorable==0):
-                    resultats =f"""      Votre situation peut relever d’un COVID 19.
+                    resultats =f"""    3.  Votre situation peut relever d’un COVID 19.
             Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile (SOS médecins, etc.)"""
 
                 elif Post.facteur_pronostique_defavorable >= 1:
                     if Post.facteur_de_gravite_mineur ==(1 or 2):
-                        resultats = """     Votre situation peut relever d’un COVID 19.
+                        resultats = """   4.  Votre situation peut relever d’un COVID 19.
                 Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile (SOS médecins, etc.)"""
 
 
                     elif Post.facteur_de_gravite_mineur >=2:
-                        resultats = f"""     Votre situation peut relever d’un COVID 19.
+                        resultats = f"""    5. Votre situation peut relever d’un COVID 19.
                 Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile.
                 Si vous n'arrivez pas à obtenir de consultation, appelez :{CHOIX_DE_PAYS} """
             elif Post.fievre or(not Post.fievre and(Post.diarrhee or (Post.toux and Post.gorge_ou_courbatures) or (Post.toux and Post.impossibilite_de_vous_alimenter ))):
                 if Post.facteur_pronostique_defavorable==0:
                     if Post.facteur_de_gravite_mineur!=0:
-                        resultats = """     Votre situation peut relever d’un COVID 19 qu’il faut surveiller.
+                        resultats = """    6. Votre situation peut relever d’un COVID 19 qu’il faut surveiller.
             Si de nouveaux symptômes apparaissent, refaites le test ou consultez votre médecin.
             Nous vous conseillons de rester à votre domicile."""
                     elif Post.facteur_de_gravite_mineur == 0:
 
                         if Post.age <= 50 :
-                            resultats = """     Votre situation peut relever d’un COVID 19 qu’il faut surveiller.
+                            resultats = """  7.   Votre situation peut relever d’un COVID 19 qu’il faut surveiller.
                 Si de nouveaux symptômes apparaissent, refaites le test ou consultez votre médecin.
                 Nous vous conseillons de rester à votre domicile."""
                         elif Post.age > 50:
-                            resultats = f"""Votre situation peut relever d’un COVID 19.
+                            resultats = f""" 8. Votre situation peut relever d’un COVID 19.
             Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile.
             Appelez les Numeros d'Urgences :
     {CHOIX_DE_PAYS} si une gêne respiratoire ou des difficultés importantes pour vous alimenter ou boire apparaissent pendant plus de 24 heures."""
                     elif  Post.facteur_de_gravite_mineur!=0:
-                        resultats = f"""     Votre situation peut relever d’un COVID 19.
+                        resultats = f"""    9.  Votre situation peut relever d’un COVID 19.
             Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile.
             Appelez les Numeros d'Urgences :
     {CHOIX_DE_PAYS} si une gêne respiratoire ou des difficultés importantes pour vous alimenter ou boire apparaissent pendant plus de 24 heures."""
 
                 if Post.facteur_pronostique_defavorable != 0:
                     if Post.facteur_de_gravite_mineur <=1:
-                        resultats = f"""     Votre situation peut relever d’un COVID 19.
+                        resultats = f"""  10.   Votre situation peut relever d’un COVID 19.
                 Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile.
                 Appelez les Numeros d'Urgences :
     {CHOIX_DE_PAYS} si une gêne respiratoire ou des difficultés importantes pour vous alimenter ou boire apparaissent pendant plus de 24 heures."""
                     elif Post.facteur_de_gravite_mineur >1:
-                        resultats = f"""     Votre situation peut relever d’un COVID 19.
+                        resultats = f"""    11. Votre situation peut relever d’un COVID 19.
                 Demandez une téléconsultation ou un médecin généraliste ou une visite à domicile.
                 Si vous n'arrivez pas à obtenir de consultation, appelez les Numeros d'Urgences :
     {CHOIX_DE_PAYS} .."""
-            elif not Post.fievre  and(Post.toux or Post.gorge_ou_courbatures or Post.impossibilite_de_vous_alimenter):
+            elif ( not Post.fievre  and(Post.toux or Post.gorge_ou_courbatures or Post.impossibilite_de_vous_alimenter)):
+                A=( not Post.fievre  and(Post.toux or Post.gorge_ou_courbatures or Post.impossibilite_de_vous_alimenter))
+                print(f" not Post.fievre  and(Post.toux or Post.gorge_ou_courbatures or Post.impossibilite_de_vous_alimenter){A},Post.fievre  {Post.fievre},Post.toux  {Post.toux}")
                 if Post.facteur_pronostique_defavorable >=1:
-                    resultats = f"""Votre situation peut relever d’un COVID 19. Un avis médical est recommandé.
+                    resultats = f""" 12. Votre situation peut relever d’un COVID 19. Un avis médical est recommandé.
             Au moindre doute, appelez le les Numeros d'Urgences :
     {CHOIX_DE_PAYS} . Nous vous conseillons de rester à votre domicile."""
                 elif Post.facteur_pronostique_defavorable==0:
-                    resultats = """     Votre situation peut relever d’un COVID 19 qu’il faut surveiller.
+                    resultats = """   13.   Votre situation peut relever d’un COVID 19 qu’il faut surveiller.
             Si de nouveaux symptômes apparaissent, refaites le test ou consultez votre médecin.
             Nous vous conseillons de rester à votre domicile."""
-            elif not (Post.fievre and Post.gout and Post.gorge_ou_courbatures and  Post.diarrhee and Post.fatigue and Post.impossibilite_de_vous_alimenter and Post.manque_de_souffle)== True:
-                resultats = f"""     Votre situation ne relève probablement pas du COVID 19.
+            elif  (Post.fievre and Post.gout and Post.gorge_ou_courbatures and  Post.diarrhee and Post.fatigue and Post.impossibilite_de_vous_alimenter and Post.manque_de_souffle)== False:
+                resultats = f"""     14. Votre situation ne relève probablement pas du COVID 19.
             N’hésitez pas à contacter votre médecin en cas de doute.
             Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.
             Pour toute information concernant le COVID 19, les Numeros d'Urgences :
