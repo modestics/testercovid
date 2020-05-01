@@ -108,10 +108,11 @@
                         {% csrf_token %}
                         <input id="website" name="website" type="text" value="">
                         <!-- Leave for security protection, read docs for details -->
-                        <div id="middle-wizard">
+                        <div id="middle-wizard">    
 
                             <div class="step">
                                 <h3 class="main_question"><i class="arrow_right"></i>Accueil</h3>
+                                <h3 class="main_question"><i class=""></i>Demarrez le test en cliquant sur le boutton bleu suivant </h3>
                                 <div class="row">
 
                                     
@@ -505,7 +506,7 @@ ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).
                             <div class="submit step" id="end">
                                 <div class="summary">
                                     <div class="wrapper">
-                                        <h3>Merci pour votre temps<br><span id="name_field"></span>!</h3>
+                                        <h3>Merci pour votre temps ! <br><span id="name_field"></span></h3>
                                         
                                     </div>
                                    
@@ -516,9 +517,15 @@ ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).
                         </div>
                         <!-- /middle-wizard -->
                         <div id="bottom-wizard">
-                            <button type="button" name="backward" class="backward">Précédent</button>
-                            <button type="button" name="forward" class="forward">Suivant</button>
-                            <button type="submit" name="process" class="submit">Soumettre</button>
+                            <button type="button" name="backward" class="backward"> Précédent </button>
+                            <button type="button" name="forward" class="forward">Suivant </button>
+                            
+                        </div>
+                        <div id="bottom-wizard">
+                         <<<<<..........>>>>>
+                        </div>
+                        <div id="bottom-wizard">
+                         <button type="submit" name="process" class="btn btn-primary btn-lg btn-block">Soumettre pour voir le résultat </button>
                         </div>
                         <!-- /bottom-wizard -->
                     </form>
