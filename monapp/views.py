@@ -292,6 +292,12 @@ class DonneesDuProblem():
             elif  (imc>=40):
                 imc_message= f""" vous souffrez donc d'obésité massive ,il est normal pour une valeur comprise entre 18.5 et 24.9"""
 
+            if age <=60 :
+                message_age= f"""étant donné que vous avez moins de 60 ans votre âge ne constitue pas un facteur de pronostique défavorable"""
+            elif age >=60 :
+                message_age= f"""étant donné que vous avez plus de 60 ans votre âge  constitue  un facteur de pronostique défavorable"""
+
+
 
 
             resultats ="""Aucune reposnse"""
@@ -375,7 +381,7 @@ class DonneesDuProblem():
            
      
            
-            return render(request,'resultat2.html' ,{'imc_message':imc_message,'resultats': resultats,'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
+            return render(request,'resultat2.html' ,{'message_age':message_age,'age':age,'imc_message':imc_message,'resultats': resultats,'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
 
         else :
             return redirect('https://testercovid.herokuapp.com/')
@@ -480,7 +486,7 @@ class DonneesDuProblem():
 
 
 
-            return render(request,'resultat3.html' ,{'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
+            return render(request,'resultat3.html',{'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
 
         # else :
         #     return redirect('http://localhost:8000/')

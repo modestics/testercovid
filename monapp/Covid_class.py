@@ -31,7 +31,7 @@ class Post():
 
     def fonction_facteur_pronostique_defavorable(self):
         imc=(self.poids/(self.taille)**2)
-        facteurs = [self.age >= 70 , imc >= 30 ,  self.hypertension , self.diabetique , self.cancer , self.insuffisance_renale ,  self.maladie_respiratoire,  self.maladie_chronique_du_foie , self.enceinte , self.maladie_diminuer_vos_défenses_immunitaires , self.traitement_immunosuppresseur ]
+        facteurs = [self.age >= 60 , imc >= 30 ,  self.hypertension , self.diabetique , self.cancer , self.insuffisance_renale ,  self.maladie_respiratoire,  self.maladie_chronique_du_foie , self.enceinte , self.maladie_diminuer_vos_défenses_immunitaires , self.traitement_immunosuppresseur ]
         for facteur in facteurs:
             if facteur ==True:
                 self.facteur_pronostique_defavorable = self.facteur_pronostique_defavorable + 1
