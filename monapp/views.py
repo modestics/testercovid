@@ -251,7 +251,7 @@ class DonneesDuProblem():
             maladie_chronique_du_foie =Yes.Yes2True( foie)
             enceinte =Yes.Yes2True(enceinte)
             maladie_diminuer_vos_défenses_immunitaires = Yes.Yes2True( immunitaires)
-            traitement_immunosuppresseur = Yes.Yes2True(immuinosuppresseur)
+            recevoir_valeurs_traitement_immuinosuppresseurent_immunosuppresseur = Yes.Yes2True(immuinosuppresseur)
             code_postal=229
             
             imc=poids/taille**2
@@ -265,7 +265,7 @@ class DonneesDuProblem():
 
             Post=Posta(fievre,fievre_temp,toux,gout,gorge_ou_courbatures,diarrhee,fatigue,impossibilite_de_vous_alimenter,manque_de_souffle,age, poids,taille,hypertension ,diabetique,
                      cancer,maladie_respiratoire,insuffisance_renale,maladie_chronique_du_foie,enceinte,maladie_diminuer_vos_défenses_immunitaires,
-                     traitement_immunosuppresseur,code_postal)
+                     recevoir_valeurs_traitement_immuinosuppresseurent_immunosuppresseur,code_postal)
             Post.fonction_facteur_pronostique_defavorable()
             Post.fonction_facteur_de_gravite_majeur()
             Post.fonction_facteur_de_gravite_mineur()
@@ -277,6 +277,18 @@ class DonneesDuProblem():
 
             num_de_pays=ChoixDePays()
             CHOIX_DE_PAYS=num_de_pays.CHOIX[le_choix_du_pays]
+
+            if imc<=18.5 :
+                imc_message= f""" vous etes donc en sous poids il est normal pour une valeur comprise entre 18.5 et 24.9 """
+            elif (18.5 <= imc) and (imc<=24.9):
+                imc_message= f""" votre poids est donc  normal par rapport à votre taille ,il est normal pour une valeur comprise entre 18.5 et 24.9"""
+            elif (24.9<= imc) and (imc<=29.9):
+                imc_message= f""" vous etes donc en surpoids à moins que vous soyez  pratiquant de la musculation ,il est normal pour une valeur comprise entre 18.5 et 24.9 """
+            elif (29.9<= imc) and (imc<=40):
+                imc_message= f""" vous souffrez donc d'obésité, il est normal pour une valeur comprise entre 18.5 et 24.9 """
+            elif  (imc>=40):
+                imc_message= f""" vous souffrez donc d'obésité massive ,il est normal pour une valeur comprise entre 18.5 et 24.9"""
+
 
 
             resultats ="""Aucune reposnse"""
@@ -360,7 +372,7 @@ class DonneesDuProblem():
            
      
            
-            return render(request,'resultat2.html' ,{'resultats': resultats,'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
+            return render(request,'resultat2.html' ,{'imc_message':imc_message,'resultats': resultats,'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
 
         else :
             return redirect('http://localhost:8000/')

@@ -85,7 +85,7 @@
 	<div class="container">
 
     <div id="form_container">
-        <div class="row no-gutters">
+        <div class="row">
             
             <div class="col">
                 <div id="wizard_container">
@@ -108,30 +108,30 @@
                                 <h3 class="main_question"><i class="arrow_right"></i>
                                         {{resultats}}  </h3>
 
+                                      <div class="">   
 
-                                            <div class="box">
-                                             <input type="checkbox" id="expanded">
-                                            <p> les details de votre analyse sont :
-                                         Votre << facteur de pronostique >> est de {{facteur_pronostique_defavorable}} il est considéré défavorable si supérieur à zéro; il traduit l'état de santé du patient c'est à dire s'il est par exemple hypertendu; diabétique;a une maladie respiratoire etc...  
-                                        Votre indice de masse corporelle est de: {{imc}} , il ne devrait  pas dépasser  35 .
-                                         Votre facteur de gravité mineur est de {{facteur_de_gravite_mineur}} sur une échelle de 0 à 2 , le facteur de gravté mineur  prends en compte la presence de fièvre ou de toux.
-                                         Votre facteur de gravité majeur est de {{facteur_de_gravite_majeur}} sur une échelle de 0 à 2 il prend en compte la présence de problemes respiratoires ou de difficultés à s'alimenter </p>
-  <!-- Note: I have sadly not found a nice way to put the more button/label inline inside the paragraph, after or before the ellipsis. -->
-                                            <label for="expanded" role="button">lire la suite</label>
-                                                    </div>
-                                                    </div>
+                                      <a class="btn btn-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Voir quelques détail de l'analyse
+                                      </a>
+                                      
+                                
 
-                                           
+                                    </div>
+                                    <div class="collapse" id="collapseExample">
+                                      <div class="card card-body">
+                                        les details de votre analyse sont :
+                                        Votre << facteur de pronostique >> est de {{facteur_pronostique_defavorable}} il est considéré défavorable si supérieur à zéro; il traduit l'état de santé du patient c'est à dire s'il est par exemple hypertendu; diabétique;a une maladie respiratoire etc...  
+                                        Votre indice de masse corporelle est de: {{imc}}{{imc_message}} .
+                                        Votre facteur de gravité mineur est de {{facteur_de_gravite_mineur}} sur une échelle de 0 à 2 , le facteur de gravté mineur  prends en compte la presence de fièvre ou de toux.
+                                        Votre facteur de gravité majeur est de {{facteur_de_gravite_majeur}} sur une échelle de 0 à 2 il prend en compte la présence de problemes respiratoires ou de difficultés à s'alimenter
+                                      </div>
+                                    </div>
+
+
+                                                                    
 
                          
 
-                                    <div id="bottom-wizard">  
-
-                                   <button type="submit" name="forward" class="btn btn-primary btn-sm">Reprendre le test</button> 
-
-
-                                      
-                                  </div> 
 
                                        
 
@@ -159,6 +159,13 @@
                         <!-- /bottom-wizard -->
 
 
+                                    <div id="bottom-wizard">  
+
+                                   <button type="submit" name="forward" class="btn btn-primary btn-lg btn-block">Reprendre le test</button> 
+
+
+                                      
+                                  </div> 
                     </form>
 
                 
