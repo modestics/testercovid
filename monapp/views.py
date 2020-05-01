@@ -375,7 +375,7 @@ class DonneesDuProblem():
             return render(request,'resultat2.html' ,{'imc_message':imc_message,'resultats': resultats,'imc': imc,'facteur_de_gravite_majeur': facteur_de_gravite_majeur,'facteur_de_gravite_mineur': facteur_de_gravite_mineur,'facteur_pronostique_defavorable': facteur_pronostique_defavorable})
 
         else :
-            return redirect('http://localhost:8000/')
+            return redirect('https://testercovid.herokuapp.com/')
 
 
 
