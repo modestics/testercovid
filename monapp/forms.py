@@ -1,12 +1,12 @@
 from django import forms
 from django.forms import MultiWidget
+from parsley.decorators import parsleyfy
 
 
 
 
  
-   
-   
+@parsleyfy 
 class resultat(forms.Form):
 	CHOIX=[('True','Chine'),
          ('True','Italie'),('True','Corée '), ('True','France '),('False','Autre pays à risque '),('False','Non ')]
@@ -29,7 +29,7 @@ class recevoir_valeurs_fiever(forms.Form):
 	     (40.7, '40.7'), (40.8, '40.8'), (40.9, '40.9'), (41.0, '41.0'), (41.1, '41.1'), (41.2, '41.2'),
 	      (41.3, '41.3'), (41.4, '41.4'), (41.5, '41.5'), (41.6, '41.6'), (41.7, '41.7'), (41.8, '41.8'), 
 	      (41.9, '41.9')]
-	temp=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
+	temp=forms.ChoiceField(choices=CHOIX,required=True,widget=forms.Select(attrs={"class":"form-control form-control-lg",'data-parsley-validate':"" , "required":"True" }))
 
 
 class choix_du_pays(forms.Form):
@@ -40,7 +40,7 @@ class choix_du_pays(forms.Form):
           ('Gabon','Gabon'),('Gambie','Gambie'),('Ghana','Ghana'),('Guinee','Guinée'),
           ('Liberia','Liberia '),('Mali','Mali'),('Mauritanie','Mauritanie'),('Niger','Niger'),
           ('Nigeria','Nigeria'),('Senegal','Sénégal'),('Sierra_Leone','Sierra Leone'),('Tchad','Tchad'),('Togo','Togo')]
-	choix_du_pays=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
+	choix_du_pays=forms.ChoiceField(choices=CHOIX,required=True,widget=forms.Select(attrs={"class":"form-control form-control-lg",'data-parsley-validate':"" , "required":"True"	 }))
 
 
 
@@ -49,7 +49,7 @@ class choix_du_pays(forms.Form):
 
 class recevoir_valeurs_traitement_immuinosuppresseur(forms.Form):
 	CHOIX=[(True,'Oui'), (False,'Non'),(False,'Je ne sais pas ')]
-	Reponse=forms.ChoiceField(choices=CHOIX, widget=forms.RadioSelect)
+	Reponse=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
 
 
 
@@ -83,7 +83,7 @@ class recevoir_valeurs_poids(forms.Form):
       (150, '150'), (151, '151'), (152, '152'), (153, '153'), (154, '154'), 
       (155, '155'), 
 (156, '156'), (157, '157'), (158, '158'), (159, '159'), (160, '160')]
-	poids=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
+	poids=forms.ChoiceField(choices=CHOIX,required=True,widget=forms.Select(attrs={"class":"form-control form-control-lg",'data-parsley-validate':"" , "required":"True" }))
 
 class recevoir_valeurs_diarrhee(forms.Form):
 	CHOIX=[('True','Oui'),
@@ -188,7 +188,7 @@ class recevoir_valeurs_taille(forms.Form):
 	 (2.13, '2.13'), (2.14, '2.14'), (2.15, '2.15'), (2.16, '2.16'), (2.17, '2.17'), 
 	 (2.18, '2.18'), (2.19, '2.19'), (2.2, '2.2')]
 	
-	taille=forms.ChoiceField(choices=CHOIX, widget=forms.Select)
+	taille=forms.ChoiceField(choices=CHOIX,required=True,widget=forms.Select(attrs={"class":"form-control form-control-lg",'data-parsley-validate':"" , "required":"True" }))
 
 class recevoir_valeurs_age(forms.Form):
 	CHOIX=[(11, '11'), (12, '12'), (13, '13'), (14, '14'), (15, '15'), (16, '16'), 
@@ -208,7 +208,7 @@ class recevoir_valeurs_age(forms.Form):
 	(106, '106'), (107, '107'), (108, '108'), (109, '109'), (110, '110'), (111, '111'),
 	 (112, '112'), (113, '113'), (114, '114'), (115, '115'), (116, '116'), (117, '117'), 
 	 (118, '118'), (119, '119'), (120, '120')]
-	age=forms.ChoiceField( choices=CHOIX, label='Ans',widget=forms.Select(attrs={"class":"form-control form-control-lg" }))
+	age=forms.ChoiceField(choices=CHOIX,required=True,widget=forms.Select(attrs={"class":"form-control form-control-lg",'data-parsley-validate':"" , "required":"True" }))
 
 class recevoir_valeurs_fatigue_moitiee_journee(forms.Form):
 	CHOIX=[('True','Oui'),
