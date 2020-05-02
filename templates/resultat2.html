@@ -78,6 +78,7 @@
 	</header>
 	<!-- /Header -->
 
+
 	<div class="container">
 
     <div id="form_container">
@@ -104,7 +105,7 @@
                                 <h3 class="main_question"><i class="arrow_right"></i>
                                         {{resultats}}  </h3>
 
-                                      <div class="">   
+                                      <div class="row">   
 
                                       <a class="btn btn-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                         Voir quelques détail de l'analyse
@@ -112,24 +113,17 @@
                                       
                                 
 
-                                    </div>
+                                    
                                     <div class="collapse" id="collapseExample">
                                       <div class="card card-body">
 
 
                                         les details de votre analyse sont :
-                                        <ul>Votre << facteur de pronostique >> est de {{facteur_pronostique_defavorable}} il est considéré défavorable si supérieur à zéro; il traduit l'état de santé du patient c'est à dire s'il est par exemple hypertendu; diabétique;a une maladie respiratoire etc... 
-                                        </ul> 
-                                        <ul>Vous avez {{age}} ans {{message_age}}</ul>
-                                        <ul>Votre indice de masse corporelle est de: {{imc}}{{imc_message}} .</ul>
-                                        <ul>Votre facteur de gravité mineur est de {{facteur_de_gravite_mineur}} sur une échelle de 0 à 2 , le facteur de gravté mineur  prends en compte la presence de fièvre ou de toux.</ul>
-                                        <ul>Votre facteur de gravité majeur est de {{facteur_de_gravite_majeur}} sur une échelle de 0 à 2 il prend en compte la présence de problemes respiratoires ou de difficultés à s'alimenter
-                                        </ul>
-
-                                        
-                                        
+                                        Votre << facteur de pronostique >> est de {{facteur_pronostique_defavorable}} il est considéré défavorable si supérieur à zéro; il traduit l'état de santé du patient c'est à dire s'il est par exemple hypertendu; diabétique;a une maladie respiratoire etc...Vous avez {{age}} ans {{message_age}} Votre indice de masse corporelle est de: {{imc}}{{imc_message}} .Votre facteur de gravité mineur est de {{facteur_de_gravite_mineur}} sur une échelle de 0 à 2 , le facteur de gravté mineur  prends en compte la presence de fièvre ou de toux.Votre facteur de gravité majeur est de {{facteur_de_gravite_majeur}} sur une échelle de 0 à 2 il prend en compte la présence de problemes respiratoires ou de difficultés à s'alimenter
+    
                                         
                                       </div>
+                                    </div>
                                     </div>
 
 
